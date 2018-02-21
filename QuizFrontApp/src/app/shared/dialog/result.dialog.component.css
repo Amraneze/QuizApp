@@ -1,0 +1,9 @@
+p {
+  text-align: center;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.mat-dialog-actions {
+  display: table-cell;
+}

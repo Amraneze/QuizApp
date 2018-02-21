@@ -1,0 +1,19 @@
+<div class="mat-app-background basic-container">
+  <mat-list>
+    <h3 mat-subheader>Quizzes</h3>
+    <mat-list-item *ngFor="let quiz of quizList | async">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Quiz {{ quiz.id }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content [style.overflow]="'auto'">
+          <avatar [name]="'Q.' + quiz.id" [displayType]="'circle'"></avatar>
+          <h4 mat-line>Level - {{quiz.difficulty}}</h4>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" [routerLink]="['/quiz', quiz.id]">Pass it</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-list-item>
+  </mat-list>
+</div>

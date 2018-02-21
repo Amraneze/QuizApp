@@ -1,0 +1,18 @@
+<div *ngIf="quiz !== undefined">
+  <mat-card *ngFor="let questions of quiz.questions; let idx = index">
+      <mat-card-header>
+          <mat-card-title>Question {{ idx + 1 }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-radio-group>
+              <div class="quiz-question">{{ questions.question }}</div>
+              <mat-list>
+                <mat-radio-button *ngFor="let option of questions.options" [value]="option" (change)="onSelectionChange(option, questions.answer)">
+                  {{ option }}
+                </mat-radio-button>
+              </mat-list>
+          </mat-radio-group>
+      </mat-card-content>
+  </mat-card>
+  <button mat-raised-button color="primary" (click)="saveQuizResult()">Pass it</button>
+</div>

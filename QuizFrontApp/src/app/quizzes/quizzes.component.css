@@ -1,0 +1,7 @@
+.mat-list .mat-list-item {
+    display: inline-grid;
+}
+
+.mat-list {
+    text-align: center;
+}
