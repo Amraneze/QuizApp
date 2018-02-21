@@ -1,7 +1,22 @@
 .mat-list .mat-list-item {
-    display: inline-grid;
+  height: 100%;
+  display: inline-grid;
 }
 
 .mat-list {
-    text-align: center;
+  text-align: center;
+}
+
+.mat-app-background {
+  background-color: #ffffff;
+}
+
+.mat-list-item {
+  margin: 10% 5% 0;
+}
+
+.mat-subheader {
+  font-size: 30px;
+  margin: 10px;
+  font-weight: 900;
 }

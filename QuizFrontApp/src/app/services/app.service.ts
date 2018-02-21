@@ -16,11 +16,11 @@ export class AppService {
 
     constructor(private http: HttpClient) {}
 
+    //TODO Implement snackbar if the server is down
     fetchQuizList(): Observable<QuizList[]> {
         return this.quizList = this.http.get<QuizList[]>(environment.api_url + 'quiz');
     }
 
-    //TODO ask the result of what the same quiz or the last quiz
     fetchLastResult(quizId): Observable<any> {
         return this.http.get(environment.api_url + 'quiz/result/' + quizId);
     }

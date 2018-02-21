@@ -27,6 +27,10 @@
     font-family: 'Open Sans';
 }
 
+.mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+  background-color: #0F4CAF;
+}
+
 .result-dialog .mat-dialog-container {
   text-align: center;
 }

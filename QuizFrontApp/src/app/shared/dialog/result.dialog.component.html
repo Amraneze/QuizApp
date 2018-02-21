@@ -1,9 +1,9 @@
 <h1 mat-dialog-title>Your result</h1>
 <div mat-dialog-content>
-  <p>{{data.result}}</p>
+  <p>{{data.result + data.totalQuestions}}</p>
   <div *ngIf="data.previousResult != 0">
     <h1>Your previous result is</h1>
-    <p>{{ data.previousResult }}</p>
+    <p>{{ data.previousResult + data.totalQuestions }}</p>
   </div>
 </div>
 <div mat-dialog-actions>

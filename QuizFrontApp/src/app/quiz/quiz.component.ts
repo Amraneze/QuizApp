@@ -54,13 +54,12 @@ export class QuizComponent implements OnInit {
     this.openDialog();
   }
 
-  //TODO maybe we should return to home screen to select another quiz
   openDialog(): void {
     var totalQuestions = '/' + this.quiz.questions.length;
     this.dialog.open(ResultDialogComponent, {
       width: '250px',
       panelClass: 'result-dialog',
-      data: { result: this.result + totalQuestions, previousResult: this.previousResult.result + totalQuestions}
+      data: { result: this.result, previousResult: this.previousResult.result, totalQuestions: totalQuestions}
     });
   }
 }
