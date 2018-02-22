@@ -9,5 +9,5 @@ node .\app.js
 
 ## Start the front app
 cd QuizFrontApp
-ng install (if the modules are not installed)
+npm install (if the modules are not installed)
 ng serve
