@@ -16,15 +16,28 @@ export class AppService {
 
     constructor(private http: HttpClient) {}
 
+    /**
+    *   Get all quizzes 
+    *   @returns Observable of QuizList[]
+    */
     //TODO Implement snackbar if the server is down
     fetchQuizList(): Observable<QuizList[]> {
         return this.quizList = this.http.get<QuizList[]>(environment.api_url + 'quiz');
     }
 
+    /**
+    *   Get the last result of a specific quiz
+    *   @param id quiz id
+    *   @returns result with structure {id: string, result: number}
+    */
     fetchLastResult(quizId): Observable<any> {
         return this.http.get(environment.api_url + 'quiz/result/' + quizId);
     }
 
+    /**
+    *   Save the quiz resul
+    *   @param quizId quiz id, result which is the result of that specific quiz
+    */
     saveQuizResult(quizId, result) {
         return this.http.post(environment.api_url + 'quiz/result/' + quizId, {result: result}).subscribe(
           res => {
@@ -35,6 +48,11 @@ export class AppService {
           });
     }
 
+    /**
+    *   Get the quiz from id
+    *   @param id quiz id 
+    *   @returns QuizList
+    */
     getQuiz(id: number) {
         return this.quizList != undefined ? this.quizList.map(quizzes => quizzes.find(quiz => quiz.id === id)) : undefined;
     }
